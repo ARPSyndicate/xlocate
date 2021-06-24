@@ -15,7 +15,7 @@ GREEN = '\033[92m'
 YELLOW = '\033[93m'
 CLEAR = '\x1b[0m'
 
-print(BLUE + "Xlocate[1.3] by ARPSyndicate" + CLEAR)
+print(BLUE + "Xlocate[1.4] by ARPSyndicate" + CLEAR)
 print(YELLOW + "the ultimate exploits/references finder" + CLEAR)
 
 if len(sys.argv) < 2:
@@ -90,7 +90,7 @@ if inputs.keys:
         except(KeyboardInterrupt, SystemExit):
             executor.shutdown(wait=False)
             sys.exit()
-    for keyword in keywords:
+    for keyword in list(result.keys()):
         result[keyword] = list(set(result[keyword]))
         result[keyword].sort()
         for entry in result[keyword]:
